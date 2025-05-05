@@ -77,6 +77,10 @@ header{
     font-weight: bold;
     font-size: 14px;
 }
+.menu nav ul li a:hover {
+    color: var(--color_primario_4); 
+    transform: translateY(-2px); 
+}
 
 /* Botón de login */
 .boton {
