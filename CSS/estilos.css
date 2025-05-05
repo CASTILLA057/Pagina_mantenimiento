@@ -91,7 +91,10 @@ header{
 }
 
 .boton:hover {
-    background-color: white;
+    color: var(--color_background_1);
+    background: var(--color_primario_4);
+    border-color: var(--color_primario_4);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
 }
 
 /* Redes sociales */
