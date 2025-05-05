@@ -1,0 +1,239 @@
+/* Reset */
+:root{
+    --color_primario_1: #004b23;
+    --color_primario_2: #006400;
+    --color_primario_3: #007200;
+    --color_primario_4: #008000;
+    --color_primario_5: #296b29;
+    --color_primario_6: #38b000;
+    --color_primario_7: #70e000;
+    --color_primario_8: #9ef01a;
+    --color_primario_9: #ccff33;
+    --color_primario_10: #c7eec2;
+    --color_background_1: #f1f1f1;
+    --color_background_2: #e2c72f;
+    --color_background_3: #e3eae6;
+    --color_letras_1: #072520;
+    --color_text_1: black;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+header{
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color_background_1);
+}
+
+/* Contenedor del header */
+
+.container__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 40px;
+    background-color: #f5f5f5;
+}
+
+
+/* Logo */
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+/* Menú principal + login + redes sociales */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Menú de navegación */
+.menu nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+.menu nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Botón de login */
+.boton {
+    padding: 8px 25px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+    background-color: white;
+}
+
+/* Redes sociales */
+.redes_sociales {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 20px;
+}
+
+.redes_sociales img {
+    width: 18px;
+    height: 18px;
+}
+/* inicio container cover */
+.container_cover {
+    padding-top: 125px;
+    padding-bottom: 100px;
+    background-color: var(--color_background_3);
+}
+
+.cover {
+    max-width: 1600px;
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.texto_cover {
+    width: 480px;
+    padding-top: 20px;
+    padding-right: 100px;
+    margin-left: 200px;
+}
+
+.texto_cover h1 {
+    font-size: 50px;
+    color: whitesmoke;
+}
+
+.texto_cover p {
+    font-size: 35px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.boton_texto_cover {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 3px solid var(--color_background_1);
+    border-radius: 8px;
+    font-weight: 500;
+    color: var(--color_background_1);
+    margin: 0 auto;
+    transition: all 500ms;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+}
+
+.boton_texto_cover:hover {
+    color: var(--color_background_1);
+    background: var(--color_primario_4);
+    border-color: var(--color_primario_5);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.carousel_cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 600px; 
+}
+
+.carousel_inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+.slide {
+    width: 600px; 
+    height: 400px;
+    flex-shrink: 0;
+}
+
+button.prev,
+button.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+    display: flex;
+    width: 40px; 
+    height: 55px; 
+    border-radius: 5%;
+}
+
+button.prev {
+    left: 8px; 
+}
+
+button.next {
+    right: 8px; 
+}
+
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.texto_hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 500ms ease;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mundo Esmeralda</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="icon" href="imagenes/logo/logo.png" type="image/svg+xml">
+        
+    </head>
+    <body>
+        <header>
+        <div class="container__header">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="imagenes/logo/logo.png" alt="No se Encontro imagen">
+                    </a>
+                </div>
+                <!-- Fin Logo -->
+
+                <!-- Menú de navegación -->
+            <div class="menu">
+                    <nav>
+                        <ul>
+                            <li><a href="#">INICIO</a></li>
+                            <li><a href="#formulario">COMPRA</a></li>
+                            <li><a href="#ofertas">JOYAS</a></li>
+                            <li><a href="#footer">CONTACTO</a></li>
+                        </ul>
+                    </nav>
+                <!-- Fin del menú -->
+                
+                <!-- Botón Login -->
+                <a href="login.html" class="boton">Login</a>
+                <!-- Fin del botón -->
+
+                <!-- Redes sociales -->
+                <div class="redes_sociales">
+                    <a href="#" class="social-icon" target="_blank">
+                        <img src="imagenes/redes sociales/youtube.png" alt="No se Encontro imagen">
+                    </a>
+                    <a href="#" target="_blank"
+                        class="social-icon">
+                        <img src="imagenes/redes sociales/facebook.png" alt="No se Encontro imagen">
+                    </a>
+                    <a href="#" target="_blank" class="social-icon">
+                        <img src="imagenes/redes sociales/instagram.png" alt="No se Encontro imagen">
+                    </a>
+                    <a href="#" target="_blank" class="social-icon">
+                        <img src="imagenes/redes sociales/twitter.png" alt="No se Encontro imagen">
+                    </a>
+                </div>
+            </div>
+        </div>
+        </header>
+    </body>
+    <main>
+        <!--inicio del contenedor cover-->
+            
+
+        <div class="container_cover" style="background-image: url('imagenes/fondo/fondo.jpeg');">
+            <div class="cover">
+                <section class="texto_cover">
+                    <h1>LA NATURALEZA HECHA JOYAS</h1>
+                    <p>La Belleza de la Tierra, al Alcance de Tu Mano</p>
+                    <a href="#proyectos" class="boton_texto_cover">Vamos</a>
+                </section>
+        
+                <section class="carousel_cover">
+                    <div class="carousel">
+                        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                        <div class="carousel_inner">
+                            <img class="slide" src="imagenes/banner/Esmeralda_1.png" alt="Esmeralda 1">
+                            <img class="slide" src="imagenes/banner/Esmeralda_2.png" alt="Esmeralda 2">
+                            <img class="slide" src="imagenes/banner/Esmeralda_3.png" alt="Esmeralda 3">
+                            <img class="slide" src="imagenes/banner/Esmeralda_4.png" alt="Esmeralda 4">
+                            <img class="slide" src="imagenes/banner/Esmeralda_5.png" alt="Esmeralda 5">
+                            <img class="slide" src="imagenes/banner/Esmeralda_6.png" alt="Esmeralda 6">
+                            <img class="slide" src="imagenes/banner/Esmeralda_7.png" alt="Esmeralda 7">
+                            <img class="slide" src="imagenes/banner/Esmeralda_8.png" alt="Esmeralda 8">
+                        </div>
+                        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+        <script>
+            const carouselInner = document.querySelector(".carousel_inner");
+            const slides = Array.from(document.querySelectorAll(".slide"));
+            const slideWidth = 600;
+            let index = 0;
+            let isTransitioning = false;
+        
+            slides.forEach(slide => {
+                let clone = slide.cloneNode(true);
+                carouselInner.appendChild(clone);
+            });
+        
+            function moveSlide(direction) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                
+                index += direction;
+                carouselInner.style.transition = "transform 0.5s ease-in-out";
+                carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+        
+                setTimeout(() => {
+                    if (index >= slides.length) {
+                        index = 0;
+                        carouselInner.style.transition = "none";
+                        carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+                    }
+                    if (index < 0) {
+                        index = slides.length - 1;
+                        carouselInner.style.transition = "none";
+                        carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+                    }
+                    isTransitioning = false;
+                }, 500);
+            }
+        
+            function autoSlide() {
+                moveSlide(1);
+            }
+        
+            setInterval(autoSlide, 3000);
+        </script>
+        <!--fin del contenedor cover-->
+    </main>
+</html>
