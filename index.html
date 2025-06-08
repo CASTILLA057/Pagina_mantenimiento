@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mundo Esmeralda</title>
-        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="estilos.css">
         <link rel="icon" href="imagenes/logo/logo.png" type="image/svg+xml">
         
     </head>
@@ -88,47 +88,46 @@
         </div>
         
         <script>
-            const carouselInner = document.querySelector(".carousel_inner");
-            const slides = Array.from(document.querySelectorAll(".slide"));
-            const slideWidth = 600;
-            let index = 0;
-            let isTransitioning = false;
-        
-            slides.forEach(slide => {
-                let clone = slide.cloneNode(true);
-                carouselInner.appendChild(clone);
-            });
-        
-            function moveSlide(direction) {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                
-                index += direction;
-                carouselInner.style.transition = "transform 0.5s ease-in-out";
-                carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
-        
-                setTimeout(() => {
-                    if (index >= slides.length) {
-                        index = 0;
-                        carouselInner.style.transition = "none";
-                        carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
-                    }
-                    if (index < 0) {
-                        index = slides.length - 1;
-                        carouselInner.style.transition = "none";
-                        carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
-                    }
-                    isTransitioning = false;
-                }, 500);
-            }
-        
-            function autoSlide() {
-                moveSlide(1);
-            }
-        
-            setInterval(autoSlide, 3000);
-        </script>
-        <!--fin del contenedor cover-->
+                const carouselInner = document.querySelector(".carousel_inner");
+                const slides = Array.from(document.querySelectorAll(".slide"));
+                const slideWidth = 600;
+                let index = 0;
+                let isTransitioning = false;
+            
+                slides.forEach(slide => {
+                    let clone = slide.cloneNode(true);
+                    carouselInner.appendChild(clone);
+                });
+            
+                function moveSlide(direction) {
+                    if (isTransitioning) return;
+                    isTransitioning = true;
+                    
+                    index += direction;
+                    carouselInner.style.transition = "transform 0.5s ease-in-out";
+                    carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+            
+                    setTimeout(() => {
+                        if (index >= slides.length) {
+                            index = 0;
+                            carouselInner.style.transition = "none";
+                            carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+                        }
+                        if (index < 0) {
+                            index = slides.length - 1;
+                            carouselInner.style.transition = "none";
+                            carouselInner.style.transform = `translateX(${-index * slideWidth}px)`;
+                        }
+                        isTransitioning = false;
+                    }, 500);
+                }
+            
+                function autoSlide() {
+                    moveSlide(1);
+                }
+            
+                setInterval(autoSlide, 3000);
+            </script>
 
         <!--Proyectos-->
             <div class="contenedor_proyectos" id="proyectos">
